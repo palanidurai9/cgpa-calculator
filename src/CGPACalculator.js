@@ -80,16 +80,20 @@ const CGPACalculator = () => {
           <div key={subject.id} className="subject-row">
             <div className="subject-field">
               <label htmlFor={`grade-${subject.id}`}>Grade:</label>
-              <select
-                id={`grade-${subject.id}`}
-                name="grade"
-                value={subject.grade}
-                onChange={e => handleInputChange(subject.id, e)}
-              >
-                {Object.keys(gradePointsMap).map(grade => (
-                  <option key={grade} value={grade}>{grade}</option>
-                ))}
-              </select>
+              <div className="tooltip-container">
+    <label htmlFor={`grade-${subject.id}`}>Grade:</label>
+    <select
+        id={`grade-${subject.id}`}
+        name="grade"
+        value={subject.grade}
+        onChange={e => handleInputChange(subject.id, e)}
+    >
+        {Object.keys(gradePointsMap).map(grade => (
+            <option key={grade} value={grade}>{grade}</option>
+        ))}
+    </select>
+    <span className="tooltip-text">O: 10, A+: 9, A: 8, B+: 7, B: 6, C: 5</span>
+</div>
             </div>
             
             <div className="subject-field">
@@ -105,7 +109,13 @@ const CGPACalculator = () => {
               />
             </div>
             
-            <button className="delete-btn" onClick={() => handleDeleteSubject(subject.id)}>Delete</button>
+            <button 
+  className="delete-btn" 
+  onClick={() => handleDeleteSubject(subject.id)}
+  aria-label={`Delete subject with grade ${subject.grade} and credits ${subject.credits}`}
+>
+  Delete
+</button>
           </div>
         ))}
       </div>
