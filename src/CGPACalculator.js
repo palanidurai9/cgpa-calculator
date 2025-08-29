@@ -68,12 +68,11 @@ const CGPACalculator = () => {
       setCgpa(calculatedCGPA);
     }
   };
+  
 
   return (
-    <div className="calculator-container">
-      <h1>Anna University CGPA Calculator</h1>
-      <p>Enter your subject grades and credits to instantly calculate your CGPA.
-        This calculator uses the standard Anna University (e.g., R2017, R2021) grading system.</p>
+    <div className="cgpa-calculator-container">
+      <h1 className="title">Anna University CGPA Calculator</h1>
       
       <div className="subjects-list">
         {subjects.map((subject, index) => (
