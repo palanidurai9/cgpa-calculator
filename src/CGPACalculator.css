@@ -1,0 +1,241 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Using Poppins from Google Fonts */
+    background-color: #f0f2f5; /* Light gray background */
+    color: #333;
+  }
+  
+  .calculator-container {
+    max-width: 700px; /* Slightly wider for better spacing */
+    margin: 40px auto;
+    padding: 30px; /* More padding */
+    border-radius: 12px; /* Softer rounded corners */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    background-color: #ffffff; /* White background for the card */
+    text-align: center;
+  }
+  
+  h1 {
+    color: #2c3e50; /* Darker title */
+    margin-bottom: 10px;
+    font-weight: 600; /* Bolder for impact */
+  }
+  
+  .calculator-container > p { /* Targeting the intro paragraph */
+    color: #7f8c8d; /* Muted gray for description */
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+  }
+  
+  /* Subject List */
+  .subjects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between subject rows */
+    margin-bottom: 25px;
+  }
+  
+  .subject-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ecf0f1; /* Lighter background for each subject row */
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #dde1e6;
+    transition: all 0.2s ease-in-out; /* Smooth transition */
+  }
+  
+  .subject-row:focus-within { /* Highlight active row */
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.5); /* Blue focus ring */
+  }
+  
+  .subject-field {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Space between fields */
+    margin-bottom: 10px; /* For wrapping on small screens */
+  }
+  
+  .subject-field label {
+    font-weight: 500; /* Slightly less bold */
+    color: #555;
+    margin-right: 8px;
+    white-space: nowrap; /* Prevent label from breaking */
+  }
+  
+  .subject-row select,
+  .subject-row input {
+    padding: 10px 12px; /* More padding */
+    border-radius: 6px; /* Slightly more rounded */
+    border: 1px solid #bdc3c7; /* Muted border color */
+    font-size: 1rem;
+    background-color: #ffffff;
+    transition: border-color 0.2s;
+    min-width: 80px; /* Ensure input/select don't get too small */
+  }
+  
+  .subject-row select:focus,
+  .subject-row input:focus {
+    outline: none;
+    border-color: #3498db; /* Blue focus border */
+    box-shadow: 0 0 0 1px #3498db;
+  }
+  
+  /* Buttons */
+  .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 9px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-out;
+    font-size: 0.9rem;
+    margin-left: auto; /* Push delete button to the right */
+  }
+  
+  .delete-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-1px); /* Slight lift */
+  }
+  
+  .add-btn {
+    background-color: #27ae60; /* Darker green for add */
+    color: white;
+    border: none;
+    padding: 14px 25px; /* More padding for main action */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-out;
+    margin-top: 25px;
+    box-shadow: 0 4px 10px rgba(39, 174, 96, 0.2); /* Subtle shadow */
+  }
+  
+  .add-btn:hover {
+    background-color: #229954;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(39, 174, 96, 0.3);
+  }
+  
+  .clear-btn { /* New clear button */
+    background-color: #95a5a6;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    margin-left: 15px; /* Space from add button */
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .clear-btn:hover {
+    background-color: #7f8c8d;
+  }
+  
+  /* Result Display */
+  .result-box {
+    margin-top: 40px;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #e8f3f8; /* Lighter blue background for results */
+    border: 2px solid #aed6f1; /* Softer blue border */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Inner shadow */
+  }
+  
+  .result-box h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  
+  .cgpa-value {
+    font-size: 3.5rem; /* Larger CGPA value */
+    font-weight: bold;
+    color: #3498db; /* Prominent blue */
+    margin: 10px 0 15px 0;
+    letter-spacing: -1px; /* Tighter letter spacing */
+  }
+  
+  .percentage-value {
+    font-size: 1.4rem; /* Larger percentage */
+    color: #555;
+    font-weight: 500;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 600px) {
+    .calculator-container {
+      margin: 20px 15px; /* Smaller margins on small screens */
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    .subject-row {
+      flex-direction: column; /* Stack fields vertically */
+      align-items: flex-start;
+      padding: 15px;
+    }
+  
+    .subject-field {
+      margin-right: 0;
+      margin-bottom: 15px; /* More space when stacked */
+      width: 100%; /* Full width for fields */
+      justify-content: space-between;
+    }
+  
+    .subject-field label {
+      flex-shrink: 0; /* Prevent label from shrinking */
+    }
+  
+    .subject-row select,
+    .subject-row input {
+      flex-grow: 1; /* Make input/select take available space */
+      max-width: 150px; /* Limit max width for smaller screens */
+    }
+  
+    .delete-btn {
+      margin-left: 0; /* Align delete button to start if stacked */
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .add-btn, .clear-btn {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 15px;
+    }
+  
+    .cgpa-value {
+      font-size: 2.8rem;
+    }
+  
+    .percentage-value {
+      font-size: 1.1rem;
+    }
+  }
+  
+  /* Animations for new subjects */
+  .subject-row.new-subject {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
